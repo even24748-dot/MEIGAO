@@ -1,4 +1,14 @@
-let isEnglish = localStorage.getItem("lang") === "en";
+// ⭐ 使用 sessionStorage（只在当前浏览会话有效）
+let savedLang = sessionStorage.getItem("lang");
+
+// 默认中文
+if (!savedLang) {
+    sessionStorage.setItem("lang", "zh");
+    savedLang = "zh";
+}
+
+// 当前语言状态
+let isEnglish = savedLang === "en";
 
 function applyLang() {
     const textMap = {
@@ -36,10 +46,12 @@ function applyLang() {
     }
 }
 
+// 切换语言按钮
 function toggleLang() {
     isEnglish = !isEnglish;
-    localStorage.setItem("lang", isEnglish ? "en" : "zh");
+    sessionStorage.setItem("lang", isEnglish ? "en" : "zh");
     applyLang();
 }
 
+// 页面加载自动应用语言
 window.onload = applyLang;
