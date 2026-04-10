@@ -25,7 +25,7 @@ function applyLang() {
         contact_title: ["联系我们", "Contact Us"],
         name: ["王春梅", "Shelley Wang"],
         company: ["中山市美高电子仪器有限公司", "Zhongshan Meigao Electronic Instrument Co., Ltd"],
-        wechat: ["微信：shellyashu", "WeChat: shellyashu"]
+        wechat: ["微信：shelleyashu", "WeChat: shelleyashu"]
     };
 
     for (let id in textMap) {
